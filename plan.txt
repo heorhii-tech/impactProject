@@ -1,0 +1,32 @@
+Create trello . Undestand all about what to do in trello. 
+
+1. init new project . npm init 
+2. put discription : name , git repo , keywords
+3. inst frameworks : express , ejs , nodemone , mongoose, cookie-parser
+
+
+
+3. Create all floders : 
+conrtroller , database, midllewere, model,oublic,routes,views , dotenv...... i dont remeber all of them
+Create .env :
+PORT=3001
+MONGOOSE=
+JWT_TEXT = ?
+
+4. Create server. js:
+
+connect express, start server.
+connect view engine
+
+app.listen(process.env.Port ?? Port , ()=>{
+    console.log(`server on ${Port}`)
+})
+5. in floder views create login.ejs page , in floder routes creat route.js
+6. in floder controllers creat userController.ejs , creat function getLoginPage
+7. in route.js :
+const express = require('express');
+const route = express.Router();
+const contrl = require('../controller/userController');
+
+ route.get('/',userController.getAuthPage)
+
