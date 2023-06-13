@@ -1,16 +1,30 @@
-<%- include ('./components/header')%>
+<%- include ('./components/header') %>
+
+<section class="section_content">
 
     <div class="container">
+        <div class="main_wrapper_start">
+            <div class="main_title">
+                <h3>Matrix Master Community</h3>
+            </div>
+            <div>
+                <a class="question_btn" href="/questionPage">Add Question</a>
+            </div>
+
+            <div class="allPosts">
+                <% for (let i = 0; i<posts.length;i++) {%>
+                <h3><%= posts[i].title %></h3>
+                <p><%= posts[i].desc %></p>
+                <%}%>
 
 
-        <div class="main_title">
-            <h3>Matrix Master Community</h3>
-        </div>
-        <div >
-            <a class="question_btn" href="/addQuestion">Add Question</a>
+
+            </div>
         </div>
 
     </div>
 </section>
+
+
 </body>
 </html>

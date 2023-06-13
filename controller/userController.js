@@ -5,9 +5,7 @@ const jwt = require('jsonwebtoken');
 
 
 
-const getAuthPage = (req,res)=>{
-    res.render('startPage')
-}
+
 const getLoginPage = (req,res)=>{
 res.render('logInPage')
 }
@@ -75,11 +73,11 @@ const getSignUpFunction = async (req,res)=>{
 }
 
 const getQuestionPage = (req,res)=>{
-    res.send( ' hello')
+    res.render( 'questionPage')
 }
 
 module.exports= {
-    getAuthPage,
+
     getLoginPage,
 //    postLoginPage,
     getSignPage,
