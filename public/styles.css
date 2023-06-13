@@ -70,6 +70,21 @@ dd {
     border-radius: 10px;
     padding: 6px;
     color: yellowgreen;
+}
 
 
+.loginForm{
+    padding:20px;
+    margin:10px;
+
+}
+.loginForm input,label{
+    padding:5px;
+    margin:10px;
+
+}
+#loginTitle{
+    padding:5px;
+    margin-left:35px;
+    color:blue;
 }
