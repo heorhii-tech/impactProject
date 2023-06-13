@@ -1,3 +1,10 @@
+const userModel = require('../model/userModel');
+let bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
+
+
+
 const getAuthPage = (req,res)=>{
     res.render('startPage')
 }
@@ -34,8 +41,39 @@ res.render('logInPage')
 //}
 
 const getSignPage = (req,res)=>{
-    res.send('hello')
+    res.render('signupPage' , {
+        error : ''})
 }
+const getSignUpFunction = async (req,res)=>{
+    let existedUser = await userModel.findOne({email: req.body.email});
+    if(existedUser) {
+        res.render('signupPage', {
+            error: "user is exist",
+            success: ""
+        })
+
+    }else {
+        let hashedPass = bcrypt.hashSync(req.body.password, 7 )
+        let userObj = {
+            ...req.body,
+            password:hashedPass
+        }
+
+        let newUser = new userModel(userObj);
+        console.log(newUser)
+        newUser.save()
+            .then( () => {
+                res.locals.success = "User has been added";
+                res.redirect('/')
+            })
+            .catch( (err) => {
+                throw err
+            })
+    }
+
+
+}
+
 const getQuestionPage = (req,res)=>{
     res.send( ' hello')
 }
@@ -45,5 +83,6 @@ module.exports= {
     getLoginPage,
 //    postLoginPage,
     getSignPage,
-    getQuestionPage
+    getQuestionPage,
+    getSignUpFunction
 }

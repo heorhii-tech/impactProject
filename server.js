@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express();
 const routes = require('./routes/routes');
-
+require('./DataBase/mongoDB')
 const cookieParser = require('cookie-parser');
 app.use(cookieParser())
 app.use('/public', express.static('public'));
