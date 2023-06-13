@@ -1,0 +1,16 @@
+<%- include ('./components/header')%>
+
+ <div>
+    <h2 id="loginTitle">Log in</h2>
+    <form action="/login" method="post" class="loginForm">
+        <label for="name">Name</label>
+        <input type="email" name="name" id="email" placeholder="Enter your name" />
+        <br />
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email"  />
+        <br />
+        <label for="password">password</label>
+        <input type="password" name="password" id="password" placeholder="Enter your password"  />
+        <br />
+        <input type="submit" value="Login">
+        </form>
