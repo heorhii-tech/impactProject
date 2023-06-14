@@ -13,12 +13,19 @@
 
             <div class="allPosts">
                 <% for (let i = 0; i<posts.length;i++) {%>
+                <div class="post">
                 <h3><%= posts[i].title %></h3>
                 <p><%= posts[i].desc %></p>
+                <div>
+                      <a href=/edit-post<%= posts[i]._id%>>
+                      <button class="btn btn-light">Edit</button>
+                       </a>
+                       <a href=/delete-post/<%= posts[i]._id%>>
+                       <button class="btn btn-light">Delete</button>
+                       </a>
+                   </div>
+                </div>
                 <%}%>
-
-
-
             </div>
         </div>
 

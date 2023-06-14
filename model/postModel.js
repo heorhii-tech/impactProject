@@ -10,7 +10,10 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: false
     },
-
+      owner : {
+        type : Schema.Types.ObjectId,
+        ref : 'user'
+    }
 
 })
 
