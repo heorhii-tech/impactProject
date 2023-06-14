@@ -25,12 +25,13 @@ const postLoginPage = async (req, res) => {
         } else {
             let infoForToken = {
                 id: existedUser._id,
-                name: existedUser.userName,
+                userName: existedUser.userName,
                 email: existedUser.email
             }
             let userToken = jwt.sign({infoForToken}, process.env.JWT_TEXT);
             res.cookie("userToken", userToken, {httpOnly: true});
-            res.redirect('/mainPage')
+
+            res.redirect('/')
         }
     }
 }
@@ -56,11 +57,11 @@ const getSignUpFunction = async (req, res) => {
         }
 
         let newUser = new userModel(userObj);
-        console.log(newUser)
+
         newUser.save()
             .then(() => {
                 res.locals.success = "User has been added";
-                res.redirect('/login')
+                res.redirect('/loginPage')
             })
             .catch((err) => {
                 throw err
@@ -74,9 +75,9 @@ const getQuestionPage = (req, res) => {
     res.render('questionPage')
 }
 
-const logOut = (req,res)=>{
+const logOut = (req, res) => {
     res.clearCookie('userToken');
-    res.redirect('/' )
+    res.redirect('/')
 }
 
 module.exports = {

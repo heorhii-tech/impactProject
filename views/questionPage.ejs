@@ -12,7 +12,7 @@
     <div class="container">
         <div class="main_wrapper">
             <div class="question_wrapper">
-                <form action="/addNewQuestion" method="post">
+                <form action="/addNewQuestion/<%= userId%>" method="post">
                     <input type="text" placeholder="Title" name="title">
                     <textarea name="desc" id="" cols="30" rows="10" placeholder="Description"></textarea>
                     <button>Add question</button>

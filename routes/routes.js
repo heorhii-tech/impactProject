@@ -17,7 +17,7 @@ route.get('/signupPage',midle.checkHomeTkn, contrl.getSignPage)
 route.post('/signup',contrl.getSignUpFunction)
 
 route.get('/questionPage',midle.checkToken, contrl.getQuestionPage)
-route.post('/addNewQuestion',midle.checkToken, postcontrl.addNewQuestion)
+route.post('/addNewQuestion/:id',midle.checkToken, postcontrl.addNewQuestion)
 
 route.get('/logout', contrl.logOut)
 
