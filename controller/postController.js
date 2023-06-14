@@ -12,6 +12,18 @@ const getStartPage = (req, res) => {
             console.log(err);
         })
 }
+const getMainPage = (req,res)=>{
+    postModel.find()
+
+        .then(allPosts => {
+            res.render('mainPage', {
+                posts: allPosts
+            })
+        })
+        .catch(err => {
+            console.log(err);
+        })
+}
 
 const addNewQuestion = (req, res) => {
     let postObj = {
@@ -30,10 +42,16 @@ const addNewQuestion = (req, res) => {
 
 
 }
+const logOut = (req,res)=>{
+    res.clearCookie('userToken');
+    res.render('startPage', {error :''})
+}
 
 module.exports = {
     getStartPage,
-    addNewQuestion
+    addNewQuestion,
+    getMainPage
+
 
 
 }

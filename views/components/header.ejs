@@ -13,8 +13,16 @@
                 <h4>Logo</h4>
             </div>
             <div class="auth">
+                <%if(!userId){%>
+
                 <a class="auth_btn" href="/loginPage">Log In</a>
                 <a class="auth_btn" href="/signupPage">Sign Up</a>
+                <%}%>
+                <%if(userId){%>
+
+                    <a  class="auth_btn" href="/logout">Log Out</a>
+                <%}%>
+
             </div>
         </div>
     </div>

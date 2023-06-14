@@ -1,18 +1,25 @@
 const express = require('express');
 const postcontrl = require('../controller/postController');
-const route = express.Router();
-
+const midle = require('../middlewere/middlewere');
 const contrl = require('../controller/userController');
 
-route.get('/', postcontrl.getStartPage);
-route.get('/loginPage', contrl.getLoginPage)
-//route.post('/login', contrl.postLoginPage)
+const route = express.Router();
 
-route.get('/signupPage', contrl.getSignPage)
+
+
+route.get('/',midle.checkHomeTkn,postcontrl.getStartPage);
+route.get('/loginPage',midle.checkHomeTkn, contrl.getLoginPage)
+route.post('/login', contrl.postLoginPage)
+
+route.get('/mainPage',midle.checkToken,postcontrl.getMainPage)
+
+route.get('/signupPage',midle.checkHomeTkn, contrl.getSignPage)
 route.post('/signup',contrl.getSignUpFunction)
 
-route.get('/questionPage', contrl.getQuestionPage)
-route.post('/addNewQuestion', postcontrl.addNewQuestion)
+route.get('/questionPage',midle.checkToken, contrl.getQuestionPage)
+route.post('/addNewQuestion',midle.checkToken, postcontrl.addNewQuestion)
+
+route.get('/logout', contrl.logOut)
 
 
 module.exports = route;

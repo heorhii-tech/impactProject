@@ -1,10 +1,36 @@
-<%- include ('./components/header')%>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/styles.css">
+</head>
+<body>
+<section class="section_header">
+    <div class="container_header">
+        <div class="header">
+            <div class="logo">
+                <h4>Logo</h4>
+            </div>
+            <div class="auth">
 
- <div>
+                <a class="auth_btn" href="/loginPage">Log In</a>
+                <a class="auth_btn" href="/signupPage">Sign Up</a>
+                <a href="/">Home</a>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<div>
     <h2 id="loginTitle">Log in</h2>
     <form action="/login" method="post" class="loginForm">
         <label for="name">Name</label>
-        <input type="email" name="name" id="email" placeholder="Enter your name" />
+        <input type="text" name="name" id="username" placeholder="Enter your name" />
         <br />
         <label for="email">Email</label>
         <input type="email" name="email" id="email" placeholder="Enter your email"  />
@@ -13,5 +39,7 @@
         <input type="password" name="password" id="password" placeholder="Enter your password"  />
         <br />
         <input type="submit" value="Login">
-        </form>
- </div>
+    </form>
+</div>
+</body>
+</html>
