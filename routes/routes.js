@@ -10,6 +10,7 @@ route.post('/login', contrl.postLoginPage)
 
 route.get('/signupPage', contrl.getSignPage)
 route.post('/signup',contrl.getSignUpFunction)
+route.get('/logout',contrl.getLogOutFunction)
 
 route.get('/questionPage', contrl.getQuestionPage)
 route.post('/addNewQuestion', postcontrl.addNewQuestion)
