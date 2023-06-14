@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Page</title>
+    <link rel="stylesheet" href="./public/styles.css">
+</head>
+<body>
+<%- include ('./components/header')%>
+
+<div class="">
+    <h3><%=post.title%></h3>
+    <p><%=post.desc%></p>
+    <form action="/editPost/<%=post._id%>" method="post">
+        <input type="text" name="title" value="<%= post.title%>">
+        <textarea name="desc" id="" cols="30" rows="10"><%=post.desc%></textarea>
+        <button>Edit</button>
+        <a href="/">Home</a>
+    </form>
+
+
+</div>
+</body>
+</html>

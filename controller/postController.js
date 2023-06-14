@@ -27,13 +27,36 @@ const getMainPage = (req, res) => {
             console.log(err);
         })
 }
+const deleteQuestion = (req,res)=>{
+    postModel.findByIdAndDelete(req.params.id)
+        .then(res.redirect('/'))
+        .catch(err => console.log(err))
+}
+
+const getEditPage = (req,res)=>{
+
+    postModel.findById(req.params.id)
+        .then(result=>res.render('editPage', {post : result}))
+        .catch(err=>(console.log(err)))
+}
+
+    const postEdited = (req,res)=>{
+        postModel.findByIdAndUpdate({_id: req.params.id})
+            .then(result =>{
+                result.title = req.body.title
+                result.desc = req.body.desc
+                result.save()
+                    .then(()=>
+                        res.redirect('/'))
+                    .catch(err=>console.log(err))
+            })
+}
 
 const addNewQuestion = (req, res) => {
     let postObj = {
         ...req.body,
         owner: req.params.id
     };
-
 
     let newPost = new postModel(postObj);
     newPost.save()
@@ -53,7 +76,10 @@ const logOut = (req, res) => {
 module.exports = {
     getStartPage,
     addNewQuestion,
-    getMainPage
+    getMainPage,
+    getEditPage,
+    postEdited,
+    deleteQuestion
 
 
 }
