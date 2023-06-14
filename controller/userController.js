@@ -56,7 +56,6 @@ const getSignUpFunction = async (req,res)=>{
             ...req.body,
             password:hashedPass
         }
-
         let newUser = new userModel(userObj);
         console.log(newUser)
         newUser.save()
