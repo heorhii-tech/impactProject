@@ -23,7 +23,20 @@
                 <h3><%= posts[i].title %></h3>
                 <p><%= posts[i].desc %></p>
                 <p>added by : <%= posts[i].owner.userName%> </p>
+
+                    <% if(posts[i].owner._id.toString() === userId.toString()) { %>
+                    <div>
+
+                        <a href="/edit_page/<%=posts[i]._id%>"><button class="btn btn-light">Edit</button></a>
+
+                        <form action="/delete/<%=posts[i]._id%>">
+                            <button class="btn btn-light">Delete</button>
+                        </form>
+                    </div>
+                    <% } %>
+
                 <%}%>
+
 
 
 

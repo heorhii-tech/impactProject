@@ -16,6 +16,12 @@ route.get('/mainPage',midle.checkToken,postcontrl.getMainPage)
 route.get('/signupPage',midle.checkHomeTkn, contrl.getSignPage)
 route.post('/signup',contrl.getSignUpFunction)
 
+route.get('/edit_page/:id',midle.checkToken, postcontrl.getEditPage)
+
+route.post('/editPost/:id', postcontrl.postEdited)
+
+route.get('/delete/:id', postcontrl.deleteQuestion)
+
 route.get('/questionPage',midle.checkToken, contrl.getQuestionPage)
 route.post('/addNewQuestion/:id',midle.checkToken, postcontrl.addNewQuestion)
 
