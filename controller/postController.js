@@ -19,8 +19,8 @@ const addNewQuestion = (req, res) => {
         owner: req.params.id
     };
     console.log(postObj)
+    var newPost = new postModel(postObj);
 
-    let newPost = new postModel(postObj);
     newPost.save()
         .then(() => {
             res.redirect('/')
@@ -30,9 +30,8 @@ const addNewQuestion = (req, res) => {
 }
 //edit question
 const getEditpage = (req,res)=>{
-    postModel.findById({_id: req.params.id})
-    .then(result=>{
-        console.log(result)
+         postModel.findById({_id:newPost._id})
+        .then(result=>{
         res.render('editQuestionPage',{result})})
         .catch(err=>console.log(err))
 }
@@ -54,7 +53,6 @@ const deleteQuestion = (req,res)=>{
         .then(result=> res.redirect('startPage'))
         .catch(err=>console.log(err))
 }
-
 module.exports = {
     getStartPage,
     addNewQuestion,

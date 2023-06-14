@@ -31,7 +31,7 @@ const postLoginPage = async(req,res)=>{
                 name: existedUser.userName,
                 email: existedUser.email
            }
-                  let userToken = jwt.sign({infoForToken}, process.env.JWT_TEXT);
+             let userToken = jwt.sign({infoForToken}, process.env.JWT_TEXT);
             res.cookie("userToken", userToken, {httpOnly: true});
             res.redirect('/')
         }
@@ -74,6 +74,10 @@ const getSignUpFunction = async (req,res)=>{
 const getQuestionPage = (req,res)=>{
     res.render( 'questionPage')
 }
+const getLogOutFunction = (req,res)=>{
+    res.clearCookie('userToken');
+    res.render('logInPage',{err:''})
+}
 
 module.exports= {
 
@@ -81,5 +85,6 @@ module.exports= {
     postLoginPage,
     getSignPage,
     getQuestionPage,
-    getSignUpFunction
+    getSignUpFunction,
+    getLogOutFunction
 }
