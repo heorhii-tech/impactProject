@@ -2,8 +2,11 @@ const postModel = require('../model/postModel')
 
 const getStartPage = (req, res) => {
     postModel.find()
+        .populate('owner')
 
         .then(allPosts => {
+
+
             res.render('startPage', {
                 posts: allPosts
             })
@@ -12,7 +15,7 @@ const getStartPage = (req, res) => {
             console.log(err);
         })
 }
-const getMainPage = (req,res)=>{
+const getMainPage = (req, res) => {
     postModel.find()
 
         .then(allPosts => {
@@ -30,7 +33,7 @@ const addNewQuestion = (req, res) => {
         ...req.body,
         owner: req.params.id
     };
-    console.log(postObj)
+
 
     let newPost = new postModel(postObj);
     newPost.save()
@@ -42,16 +45,15 @@ const addNewQuestion = (req, res) => {
 
 
 }
-const logOut = (req,res)=>{
+const logOut = (req, res) => {
     res.clearCookie('userToken');
-    res.render('startPage', {error :''})
+    res.render('startPage', {error: ''})
 }
 
 module.exports = {
     getStartPage,
     addNewQuestion,
     getMainPage
-
 
 
 }

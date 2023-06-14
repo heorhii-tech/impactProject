@@ -10,11 +10,11 @@ app.use(express.urlencoded({extended: true}));
 
 
 app.use(routes);
-app.set('view engine' , 'ejs');
+app.set('view engine', 'ejs');
 app.use(express.json())
 
-const Port = 3300;
+const Port = 3000;
 
-app.listen(process.env.Port ?? Port , ()=>{
+app.listen(process.env.Port ?? Port, () => {
     console.log(`server on ${Port}`)
 })
