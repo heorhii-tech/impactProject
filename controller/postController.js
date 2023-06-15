@@ -65,9 +65,9 @@ const addNewQuestion = (req, res) => {
     newPost.save()
         .then(() => {
             res.redirect('/')
-        }).catch(() => {
-        console.log(err)
-    })
+        }).catch(err =>
+    res.render('questionPage', {error: err})
+    )
 
 
 }
@@ -79,6 +79,7 @@ const getFullPage = (req, res) => {
                 .populate('owner')
                 .populate('fromPost')
                 .then(comments => {
+
 
 
                     res.render('fullPage', {post: result, comments: comments});
@@ -110,9 +111,10 @@ const addComment = (req, res) => {
     newComment.save()
         .then(() => {
             res.redirect(`/fullPage/${req.body.postId}`)
-        }).catch(() => {
-        console.log(err)
-    })
+        }).catch(err =>
+        res.render('questionPage', {error : err})
+
+    )
 
 
 }

@@ -7,14 +7,16 @@
 
 </head>
 <body>
-<%- include ('./components/header') %>
-<section class="section_content">
+<div class="flex_wrapper">
+
+   <%- include ('./components/header') %>
+   <section class="section_content">
 
     <div class="container">
         <div class="main_wrapper_start">
             <div class="main_title">
                 <i class="fa-solid fa-user"></i>
-                <h3>Matrix Master Community</h3>
+                <h3 class="matrix_title">Matrix Master Community</h3>
             </div>
             <div>
                 <a class="question_btn" href="/questionPage">Add Question</a>
@@ -22,38 +24,48 @@
 
             <div class="posts_wrapper">
                 <% for (let i = 0; i < posts.length;i++) { %>
-                    <div class="allPosts">
-
-                        <h3><%= posts[i].title %></h3>
-                        <p><%= posts[i].desc.slice(0, 25) %></p>
-                        <h4 class="date"><%= posts[i].creat_at%></h4>
-
-                        <p class="addedBy">Added by : <%= posts[i].owner.userName %> </p>
-
-                        <% if(posts[i].owner._id.toString() === userId.toString()) { %>
-                        <div class="edit-delete-btn">
-
-                            <a href="/edit_page/<%= posts[i]._id %>">
-                                <button class="edit_btn">Edit</button>
-                            </a>
-
-                            <form action="/delete/<%= posts[i]._id %>">
-                                <button class="edit_btn">Delete</button>
-                            </form>
-
-                        </div>
-                        <% } %>
-                        <a href="/fullPage/<%= posts[i]._id %>">See more </a>
 
 
-                    </div>
+
+
+                        <div class="allPosts">
+
+                            <h3 class="post_title"><%= posts[i].title %></h3>
+                            <p class="post_desc"><%= posts[i].desc.slice(0, 50) %></p>
+                            <h4 class="date"><%= posts[i].creat_at %></h4>
+
+                            <p class="addedBy">Added by : <%= posts[i].owner.userName %> </p>
+
+                            <% if(posts[i].owner._id.toString() === userId.toString()) { %>
+
+
+                                    <div class="edit-delete-btn">
+
+                                    <a href="/edit_page/<%= posts[i]._id %>">
+                                        <button class="edit_btn">Edit</button>
+                                    </a>
+
+                                    <form action="/delete/<%= posts[i]._id %>">
+                                        <button class="edit_btn">Delete</button>
+                                    </form>
+
+                                </div>
+                            <% } %>
+                                    <a class="see_btn" href="/fullPage/<%= posts[i]._id %>">See more </a>
+                               </div>
+
+
+
+
                 <% } %>
+
             </div>
         </div>
 
     </div>
 </section>
 
-
+   <%- include ('./components/footer') %>
+</div>
 </body>
 </html>

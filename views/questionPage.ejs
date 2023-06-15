@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
-<%- include ('./components/header') %>
-<section class="section_main">
+<div class="flex_wrapper">
+   <%- include ('./components/header') %>
+   <section class="section_main section_content">
     <div class="container">
         <div class="main_wrapper">
             <div class="question_wrapper">
@@ -19,9 +20,12 @@
                     <textarea name="desc" id="" cols="50" rows="10" placeholder="Description"></textarea><br>
                     <button>Add question</button>
                 </form>
+                <p><%=error %></p>
             </div>
         </div>
     </div>
 </section>
+   <%- include ('./components/footer') %>
+</div>
 </body>
 </html>
