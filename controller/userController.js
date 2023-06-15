@@ -20,7 +20,9 @@ const postLoginPage = async (req, res) => {
         if (!isCorrectPass) {
             res.render('loginPage', {
                 error: "user password is not correct!",
-                success: ""
+                success: "",
+                user : '',
+                userId : ''
             })
         } else {
             let infoForToken = {
@@ -46,7 +48,9 @@ const getSignUpFunction = async (req, res) => {
     if (existedUser) {
         res.render('signupPage', {
             error: "user is exist",
-            success: ""
+            success: "",
+            user: '',
+            userId:''
         })
 
     } else {
@@ -72,7 +76,7 @@ const getSignUpFunction = async (req, res) => {
 }
 
 const getQuestionPage = (req, res) => {
-    res.render('questionPage')
+    res.render('questionPage', {error: ''})
 }
 
 const logOut = (req, res) => {

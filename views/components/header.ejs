@@ -3,7 +3,7 @@
     <div class="container_header">
         <div class="header">
             <div class="logo">
-               <img src="../public/logo.png" alt="logo"  class="logo">
+                <a href="/"><img src="https://matrixmaster.info/wp-content/uploads/2021/06/cropped-logo-mm-white.png" alt="logo"  class="logo"></a>
             </div>
             <% if(user){%>
             <h4 class="header_welcome">Welcome <%= user%></h4>
@@ -11,12 +11,12 @@
             <div class="auth">
                 <%if(!userId){%>
 
-                <a class="auth_btn" href="/loginPage">Log In</i></a>
-                <a class="auth_btn" href="/signupPage">Sign Up</a>
+                <a class="login_btn" href="/loginPage">Log In</a>
+                <a class="sign_btn" href="/signupPage">Sign Up</a>
                 <%}%>
                 <%if(userId){%>
 
-                    <a  class="auth_btn" href="/logout">Log Out</a>
+                    <a  class="sign_btn" href="/logout">Log Out</a>
                 <%}%>
 
             </div>
