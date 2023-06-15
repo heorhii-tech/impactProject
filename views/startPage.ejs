@@ -26,6 +26,8 @@
 
                         <h3><%= posts[i].title %></h3>
                         <p><%= posts[i].desc.slice(0, 25) %></p>
+                        <h4 class="date"><%= posts[i].creat_at%></h4>
+
                         <p class="addedBy">Added by : <%= posts[i].owner.userName %> </p>
 
                         <% if(posts[i].owner._id.toString() === userId.toString()) { %>
