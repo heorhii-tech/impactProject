@@ -12,8 +12,8 @@
 <section class="section_header">
     <div class="container_header">
         <div class="header">
-            <div class="logo">
-                <h4>Logo</h4>
+             <div class="logo">
+               <img src="../public/logo.png" alt="logo"  class="logo">
             </div>
             <div class="auth">
 
@@ -26,8 +26,8 @@
         </div>
     </div>
 </section>
-<div>
-    <h2 id="loginTitle">Log in</h2>
+<div class="logInForm">
+    <h2 class="loginTitle">Log in</h2>
     <form action="/login" method="post" class="loginForm">
 
         <label for="email">Email</label>
@@ -36,10 +36,10 @@
         <label for="password">password</label>
         <input type="password" name="password" id="password" placeholder="Enter your password"  />
         <br />
-        <input type="submit" value="Login">
+        <button type="submit" value="Login" class="logIn-btn">Log In</button>
     </form>
-    <div class="err_login">
-        <p><%= error %></p>
+    <div >
+        <p class="errors"><%= error %></p>
     </div>
 </div>
 </body>
