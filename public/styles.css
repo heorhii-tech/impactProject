@@ -36,12 +36,14 @@ body {
     background-color: #333333;
 }
 .header{
+
     display: flex;
     justify-content: space-between;
-    padding: 20px 30px 5px 30px;
+    padding: 20px 30px 10px 30px;
     align-items: center;
     margin-bottom:20px;
-
+    display:flex;
+    justify-content:space-between;
     position: fixed;
     top: 0;
     width: 100%;
@@ -60,7 +62,6 @@ body {
     letter-spacing:1px;
     margin-top:15px;
     margin-bottom:25px;
-    margin-right:250px;
 }
 .main_wrapper_start{
     display: flex;
@@ -172,8 +173,6 @@ flex-direction: column;
 .logo{
     width:140px;
     height :75px;
-    margin-right:600px;
-    margin-left:70px;
 }
 .logIn-btn {
      width:140px;
