@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
-<%- include ('./components/header')%>
+<%- include ('./components/header') %>
 
 <div class="question_wrapper editPost">
-    <h3><%=post.title%></h3>
-    <p><%=post.desc%></p>
-    <form action="/editPost/<%=post._id%>" method="post">
-        <input type="text" name="title" value="<%= post.title%>"><br>
-        <textarea name="desc" id="" cols="40" rows="10"><%=post.desc%></textarea><br>
+    <h3><%= post.title %></h3>
+    <p><%= post.desc %></p>
+    <form action="/editPost/<%= post._id %>" method="post">
+        <input type="text" name="title" value="<%= post.title %>"><br>
+        <textarea name="desc" id="" cols="40" rows="10"><%= post.desc %></textarea><br>
         <button>Edit</button>
         <a href="/">Home</a>
     </form>

@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 
 const getLoginPage = (req, res) => {
-    res.render('logInPage', {error : " "})
+    res.render('logInPage', {error: " "})
 }
 
 const postLoginPage = async (req, res) => {
