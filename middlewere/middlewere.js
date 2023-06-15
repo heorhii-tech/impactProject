@@ -1,6 +1,17 @@
 const jwt = require('jsonwebtoken');
 
+const checkLoginToken = (req,res)=>{
 
+    let token = req.cookies.userToken;
+    if (!token) {
+        res.locals.user = null;
+        res.locals.userId = false;
+
+        next()
+    }else {
+        res.redirect('/')
+    }
+}
 
 const checkHomeTkn = (req, res, next) => {
     let token = req.cookies.userToken;
@@ -47,7 +58,8 @@ const checkToken = (req, res, next) => {
 
 module.exports = {
     checkHomeTkn,
-    checkToken
+    checkToken,
+    checkLoginToken
 
 
 }

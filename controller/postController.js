@@ -1,4 +1,5 @@
 const postModel = require('../model/postModel')
+const commentModel = require('../model/commentModel')
 
 const getStartPage = (req, res) => {
     postModel.find()
@@ -32,6 +33,8 @@ const deleteQuestion = (req,res)=>{
         .then(res.redirect('/'))
         .catch(err => console.log(err))
 }
+
+
 
 const getEditPage = (req,res)=>{
 
@@ -69,17 +72,74 @@ const addNewQuestion = (req, res) => {
 
 }
 
-const getFullPage = (req,res)=>{
+const getFullPage = (req, res) => {
     postModel.findById(req.params.id)
-        .then(result=>res.render('fullPage', {post : result}))
-        .catch (()=>console.log(err))
+        .then(result => {
+            commentModel.find()
+                .populate('owner')
+                .then(comments => {
+
+                    res.render('fullPage', { post: result, comments: comments });
+                })
+                .catch(err => {
+                    console.log(err);
+                    res.redirect(`/fullPage${req.params.id}`);
+                });
+        })
+        .catch(err => {
+            console.log(err);
+            res.redirect(`/fullPage${req.params.id}`);
+        });
+};
+
+
+const addComment = (req, res) => {
+console.log(req.body)
+    let postObj = {
+        ...req.body,
+        owner: req.params.id
+    };
+
+
+    let newComment = new commentModel(postObj);
+    newComment.save()
+        .then(() => {
+            res.redirect(`/fullPage/${req.body.postId}`)
+        }).catch(() => {
+        console.log(err)
+    })
 
 
 }
+
+const deleteComment = (req, res) => {
+
+    commentModel.findByIdAndDelete(req.params.id)
+        .then(() => {
+            res.redirect(`/fullPage/${req.body.postId}`);
+        }).catch((err) => {
+        console.log(err);
+    });
+};
+
+
+
+
+
+
+
+
+
+
+
+
 const logOut = (req, res) => {
     res.clearCookie('userToken');
     res.render('startPage', {error: ''})
 }
+
+
+
 
 module.exports = {
     getStartPage,
@@ -88,7 +148,9 @@ module.exports = {
     getEditPage,
     postEdited,
     deleteQuestion,
-    getFullPage
+    getFullPage,
+    addComment,
+    deleteComment
 
 
 }

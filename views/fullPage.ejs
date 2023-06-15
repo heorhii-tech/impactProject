@@ -29,6 +29,33 @@
 
             </div>
             <% } %>
+            <form action="/addComment/<%= userId%>" method="post">
+                <input type="hidden" value="<%= post._id%>" name="postId">
+                <textarea name="comment" id="" cols="30" rows="10" placeholder="Comment"></textarea>
+                <button>Add comment</button>
+            </form>
+            <%for(let i = 0; i<comments.length; i++){%>
+            <div class="comment">
+                <p><%=comments[i].comment%></p>
+                <p>Added by: <%= comments[i].owner.userName%></p>
+            </div>
+            <% if(comments[i].owner._id.toString() === userId.toString()) { %>
+            <div>
+
+
+
+                <form action="/deleteComment/<%=comments[i]._id%>" method="post">
+                    <input type="hidden" name="postId" value="<%= post._id %>">
+                    <button class="edit_btn">Delete</button>
+                </form>
+
+
+            </div>
+            <% } %>
+            <%}%>
+
+
+
         </div>
     </div>
 </section>
