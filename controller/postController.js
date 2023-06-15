@@ -4,6 +4,7 @@ const commentModel = require('../model/commentModel')
 const getStartPage = (req, res) => {
     postModel.find()
         .populate('owner')
+        .sort({creat_at : '-1'})
 
         .then(allPosts => {
 
