@@ -5,11 +5,11 @@ const moment = require('moment/moment')
 const postSchema = new mongoose.Schema({
     title: {
         type: String,
-        required: false
+        required: true
     },
     desc: {
         type: String,
-        required: false
+        required: true
     },
     owner: {
         type: Schema.Types.ObjectId,
