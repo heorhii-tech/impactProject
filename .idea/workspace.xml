@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2830de04-c348-42b2-a2b3-4888995da369" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/middlewere/middlewere.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewere/middlewere.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/fullPage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/fullPage.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/startPage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/startPage.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +22,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -50,11 +49,26 @@
       <option name="project" value="LOCAL" />
       <updated>1686829403909</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="style for fullpage and login MIDDLEWARE">
+      <created>1686834118472</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686834118472</updated>
+    </task>
+    <task id="LOCAL-00003" summary="style for fullpage and login MIDDLEWARE">
+      <created>1686834192486</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686834192486</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="style for startpage login signup and addquestion page" />
-    <option name="LAST_COMMIT_MESSAGE" value="style for startpage login signup and addquestion page" />
+    <MESSAGE value="style for fullpage and login MIDDLEWARE" />
+    <option name="LAST_COMMIT_MESSAGE" value="style for fullpage and login MIDDLEWARE" />
   </component>
 </project>
