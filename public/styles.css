@@ -79,9 +79,7 @@ flex-direction: column;
     border: 2px solid #360311;
     padding: 5px;
     background-color: rgba(160,156,147,0.71);
-
     gap: 10px;
-
     color: antiquewhite;
 }
 .posts_wrapper{
@@ -91,7 +89,6 @@ flex-direction: column;
 .auth{
     display: flex;
     gap: 20px;
-
 
 }
 .auth_btn{
@@ -126,7 +123,7 @@ flex-direction: column;
     padding: 0.9375em 2.1875em;
     text-decoration:none;
     letter-spacing:1px;
-    margin-bottom:40px;
+    margin-bottom:20px;
     border-radius:15px;
     transition: 0.9s ease;
 }
@@ -174,7 +171,7 @@ flex-direction: column;
     margin-left:70px;
 }
 .logIn-btn {
-      width:140px;
+     width:140px;
     height:30px;
     margin:15px;
     color:#fff;
@@ -186,7 +183,7 @@ flex-direction: column;
 }
 .logIn-btn:hover
 {
-    color:red;
+    color:black;
     background:#601cfc;
     transform:scale(1.1);
 
@@ -214,9 +211,9 @@ flex-direction: column;
     color:black;
 }
 
-.signUpForm button:hover{
-    color:red;
-    background:#601cfc;
+.signUpForm button:hover,.edit-delete-btn button:hover,edit_btn:hover {
+    color:black;
+    background:#3a6cf4;
     transform:scale(1.1);
 
 }
@@ -241,7 +238,7 @@ flex-direction: column;
       color:black;
      text-align:center;
 }
-.question_wrapper button{
+.question_wrapper button {
     color:#fff;
     background:black;
     font-size:1.1em;
@@ -256,4 +253,53 @@ flex-direction: column;
 }
 .errors{
     color:red;
+}
+.edit-delete-btn button{
+    width:80px;
+    font-size:1.1em;
+    font-weight:602;
+    border-radius:15px;
+    transition: 0.9s ease;
+}
+.addComment{
+    margin-top:200px;
+}
+.addComment div{
+
+    margin-right:10px;
+}
+.postTitle{
+    margin-left:420px;
+    margin-bottom:20px;
+    background:white;
+    border:2px solid black;
+    color:black;
+    width:200px;
+}
+.comment{
+    margin-left:340px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 40%;
+    border-radius: 10px;
+    border: 2px solid #360311;
+    padding: 5px;
+    background-color: rgba(160,156,147,0.71);
+    gap: 10px;
+    color: black;
+}
+.commentArea{
+    color:black;
+}
+.postModify{
+    margin-left:400px;
+    margin-top:10px;
+    margin-bottom:10px;
+    width:200px;
+    display:flex;
+    justify-content:space-between;
+}
+.addedBy{
+    color:black;
 }

@@ -26,10 +26,10 @@
 
                    <h3><%= posts[i].title %></h3>
                    <p><%= posts[i].desc.slice(0,25) %></p>
-                   <p>added by : <%= posts[i].owner.userName%> </p>
+                   <p class= "addedBy">Added by : <%= posts[i].owner.userName%> </p>
 
                    <% if(posts[i].owner._id.toString() === userId.toString()) { %>
-                   <div>
+                   <div class="edit-delete-btn">
 
                        <a href="/edit_page/<%=posts[i]._id%>"><button class="edit_btn">Edit</button></a>
 
