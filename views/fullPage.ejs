@@ -9,52 +9,58 @@
     <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
-<%- include ('./components/header')%>
+<%- include ('./components/header') %>
 
 <section>
     <div class="container">
         <div class="main_wrapper">
             <div class="addComment">
-                <div class="postTitle"><%= post.title%></div>
-                <div class="psotDesc"><p><%= post.desc%></p></div>
+                <div class="postTitle"><%= post.title %></div>
+                <div class="psotDesc"><p><%= post.desc %></p></div>
             </div>
+
             <% if(post.owner._id.toString() === userId.toString()) { %>
             <div class="postModify">
-                    <a href="/edit_page/<%=post._id%>"><button class="edit_btn">Edit</button></a>
-                <form action="/delete/<%=post._id%>">
+                <a href="/edit_page/<%= post._id %>">
+                    <button class="edit_btn">Edit</button>
+                </a>
+                <form action="/delete/<%= post._id %>">
                     <button class="edit_btn">Delete</button>
                 </form>
             </div>
+
             <% } %>
-            <form action="/addComment/<%= userId%>" method="post">
-                <input type="hidden" value="<%= post._id%>" name="postId" >
+            <form action="/addComment/<%= userId %>/<%= post._id %>" method="post">
+                <input type="hidden" value="<%= post._id %>" name="postId">
                 <textarea name="comment" id="" cols="50" rows="10" placeholder="Comment" class="commentArea"></textarea><br>
                 <button class="question_btn">Add comment</button>
-                <a href="/" class="edit_btn">Go Back</button></a>
+                <a href="/" class="edit_btn">Go Back</a>
             </form>
-            <%for(let i = 0; i<comments.length; i++){%>
+
+            <% for(let i = 0; i < comments.length; i++){ %>
+            <% if(comments[i].fromPost._id.toString() === post._id.toString()){ %>
+
             <div class="comment">
-                <p><%=comments[i].comment%></p>
-                <p>Added by: <%= comments[i].owner.userName%></p>
+                <p><%= comments[i].comment %></p>
+                <p>Added by: <%= comments[i].owner.userName %></p>
             </div>
 
             <% if(comments[i].owner._id.toString() === userId.toString()) { %>
             <div>
 
 
-
-                <form action="/deleteComment/<%=comments[i]._id%>" method="post">
+                <form action="/deleteComment/<%= comments[i]._id %>" method="post">
                     <input type="hidden" name="postId" value="<%= post._id %>">
                     <button class="edit_btn">Delete</button>
-                   <a href="/" class="edit_btn">Go Back</button></a>
+                    <a href="/" class="edit_btn">Go Back</a>
                 </form>
 
 
             </div>
             <% } %>
-            <%}%>
+            <% } %>
 
-
+            <% } %>
 
         </div>
     </div>

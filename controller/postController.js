@@ -28,31 +28,30 @@ const getMainPage = (req, res) => {
             console.log(err);
         })
 }
-const deleteQuestion = (req,res)=>{
+const deleteQuestion = (req, res) => {
     postModel.findByIdAndDelete(req.params.id)
         .then(res.redirect('/'))
         .catch(err => console.log(err))
 }
 
 
-
-const getEditPage = (req,res)=>{
+const getEditPage = (req, res) => {
 
     postModel.findById(req.params.id)
-        .then(result=>res.render('editPage', {post : result}))
-        .catch(err=>(console.log(err)))
+        .then(result => res.render('editPage', {post: result}))
+        .catch(err => (console.log(err)))
 }
 
-    const postEdited = (req,res)=>{
-        postModel.findByIdAndUpdate({_id: req.params.id})
-            .then(result =>{
-                result.title = req.body.title
-                result.desc = req.body.desc
-                result.save()
-                    .then(()=>
-                        res.redirect('/'))
-                    .catch(err=>console.log(err))
-            })
+const postEdited = (req, res) => {
+    postModel.findByIdAndUpdate({_id: req.params.id})
+        .then(result => {
+            result.title = req.body.title
+            result.desc = req.body.desc
+            result.save()
+                .then(() =>
+                    res.redirect('/'))
+                .catch(err => console.log(err))
+        })
 }
 
 const addNewQuestion = (req, res) => {
@@ -76,10 +75,17 @@ const getFullPage = (req, res) => {
     postModel.findById(req.params.id)
         .then(result => {
             commentModel.find()
-                .populate('owner')
+                .populate({
+                    path: 'owner',
+                    select: '_id'
+                })
+                .populate(
+                    'fromPost'
+                )
                 .then(comments => {
 
-                    res.render('fullPage', { post: result, comments: comments });
+
+                    res.render('fullPage', {post: result, comments: comments});
                 })
                 .catch(err => {
                     console.log(err);
@@ -94,10 +100,13 @@ const getFullPage = (req, res) => {
 
 
 const addComment = (req, res) => {
-console.log(req.body)
+
+    const postId = req.params.postId;
+    const ownerId = req.params.ownerId;
     let postObj = {
         ...req.body,
-        owner: req.params.id
+        owner: ownerId,
+        fromPost: postId,
     };
 
 
@@ -123,22 +132,10 @@ const deleteComment = (req, res) => {
 };
 
 
-
-
-
-
-
-
-
-
-
-
 const logOut = (req, res) => {
     res.clearCookie('userToken');
     res.render('startPage', {error: ''})
 }
-
-
 
 
 module.exports = {

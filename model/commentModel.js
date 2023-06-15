@@ -10,6 +10,10 @@ const commentSchema = new mongoose.Schema({
     owner: {
         type: Schema.Types.ObjectId,
         ref: 'user'
+    },
+    fromPost: {
+        type: Schema.Types.ObjectId,
+        ref: 'post'
     }
 
 
