@@ -76,13 +76,8 @@ const getFullPage = (req, res) => {
     postModel.findById(req.params.id)
         .then(result => {
             commentModel.find()
-                .populate({
-                    path: 'owner',
-                    select: '_id'
-                })
-                .populate(
-                    'fromPost'
-                )
+                .populate('owner')
+                .populate('fromPost')
                 .then(comments => {
 
 
