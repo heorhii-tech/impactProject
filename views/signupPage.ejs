@@ -6,14 +6,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="./public/styles.css">
+    <link rel="stylesheet" href="../public/styles.css">
 </head>
 <body>
 <section class="section_header">
     <div class="container_header">
         <div class="header">
-            <div class="logo">
-                <h4>Logo</h4>
+              <div class="logo">
+               <img src="../public/logo.png" alt="logo"  class="logo">
             </div>
             <div class="auth">
 
@@ -27,19 +27,23 @@
     </div>
 </section>
 
-<section class="section">
-    <div class="container">
-        <div class="main_wrapper">
-            <div class="signup_wrapper">
+<section class="section3">
+    <div class="container2">
+        <div class="main_wrapper2">
+            <div class="signUpForm">
+            <h2 class="loginTitle">Sign Up</h2>
                 <form action="/signup" method="post">
-                    <input type="email" name="email" placeholder="Email">
-                    <input type="text" name="userName" placeholder="User name">
-                    <input type="password" placeholder="Password" name="password">
-                    <button>Creat new account</button>
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" placeholder="Email"><br>
+                    <label for="userName">  User Name</label><br>
+                    <input type="text" name="userName" placeholder="User name"><br>
+                    <label for="password">password</label><br>
+                    <input type="password" placeholder="Password" name="password"><br>
+                    <button>Sign Up</button>
                 </form>
             </div>
-            <div class="err_signup">
-                <p><%= error %></p>
+            <div >
+                <p class="errors"><%= error %></p>
             </div>
         </div>
     </div>

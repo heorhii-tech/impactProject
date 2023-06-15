@@ -40,19 +40,33 @@ body {
     justify-content: space-between;
     padding: 20px 30px 5px 30px;
     align-items: center;
-
+    margin-bottom:20px;
 
     position: fixed;
     top: 0;
     width: 100%;
-    background-color : #360311;
+    background-color : #ADD8E6;
     border-radius: 0 0 10px 10px;
+}
+.header_welcome{
+    color:black;
+    font-weight:100;
+    font-size:1.2em;
+    letter-spacing:1px;
+    margin-top:15px;
+    margin-bottom:25px;
+    margin-right:250px;
 }
 .main_wrapper_start{
     display: flex;
 flex-direction: column;
     gap: 20px;
     padding-top: 80px;
+
+}
+.section3{
+    color:white;
+    background-color:white;
 
 }
 .allPosts{
@@ -89,7 +103,7 @@ flex-direction: column;
     text-decoration: none;
     width: 80px;
     font-weight: bold;
-    color: white;
+    color: blue;
 
 
 }
@@ -104,21 +118,38 @@ flex-direction: column;
 
 }
 .question_btn{
-    text-decoration: none;
-    font-weight: bold;
-    border: 1px solid grey;
-    border-radius: 10px;
-    padding: 6px;
-    color: yellowgreen;
-    margin-bottom: 20px;
+    color:#fff;
+    background:black;
+    font-size:1.1em;
+    font-weight:602;
+    display:inline-block;
+    padding: 0.9375em 2.1875em;
+    text-decoration:none;
+    letter-spacing:1px;
+    margin-bottom:40px;
+    border-radius:15px;
+    transition: 0.9s ease;
+}
+.question_btn:hover {
+    color:gray;
+    background:#601cfc;
+    transform:scale(1.1);
+
 }
 .edit_btn{
     color: black;
 }
 
-.loginForm{
+
+.editPost{
+    padding:10px;
+    margin:15px;
+}
+
+.logInForm{
+    color:black;
     padding:20px;
-    margin:10px;
+    margin-top:100px;
 
 }
 .loginForm input,label{
@@ -126,11 +157,103 @@ flex-direction: column;
     margin:10px;
 
 }
-#loginTitle{
+.loginForm input{
+    color:black;
+    display:flex;
+}
+.loginTitle {
     padding:5px;
-    margin-left:35px;
+    margin-left:10px;
+    margin-bottom:15px;
     color:blue;
 }
+.logo{
+    width:130px;
+    height :70px;
+    margin-right:700px;
+    margin-left:70px;
+}
+.logIn-btn {
+      width:140px;
+    height:30px;
+    margin:15px;
+    color:#fff;
+    background:black;
+    font-size:1.1em;
+    font-weight:602;
+    border-radius:15px;
+    transition: 0.9s ease;
+}
+.logIn-btn:hover
+{
+    color:red;
+    background:#601cfc;
+    transform:scale(1.1);
 
+}
+.section3{
+    background:none;
+    margin-top:100px;
+    display:flex;
+    justify-content:column;
+    padding:30px;
+}
 
+.signUpForm button{
+    width:140px;
+    height:30px;
+    margin:15px;
+    color:#fff;
+    background:black;
+    font-size:1.1em;
+    font-weight:602;
+    border-radius:15px;
+    transition: 0.9s ease;
+}
+.signUpForm input{
+    color:black;
+}
 
+.signUpForm button:hover{
+    color:red;
+    background:#601cfc;
+    transform:scale(1.1);
+
+}
+.signUpForm input,label{
+    padding:5px;
+    margin:10px;
+
+}
+.question_wrapper{
+
+    margin-top:200px;
+    text-align:center;
+}
+.question_wrapper input{
+     color:black;
+    text-align:center;
+    margin-right:40px;
+    margin-bottom:10px;
+    padding:5px;
+}
+.question_wrapper textarea{
+      color:black;
+     text-align:center;
+}
+.question_wrapper button{
+    color:#fff;
+    background:black;
+    font-size:1.1em;
+    font-weight:602;
+    margin-left:20px;
+    margin-bottom:100px;
+    padding: 0.9375em 2.1875em;
+    text-decoration:none;
+    letter-spacing:1px;
+    border-radius:15px;
+    transition: 0.9s ease;
+}
+.errors{
+    color:red;
+}
