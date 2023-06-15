@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Page</title>
+    <link rel="stylesheet" href="./public/styles.css">
+</head>
+<body>
+<%- include ('./components/header')%>
+
+<section>
+    <div class="container">
+        <div class="main_wrapper">
+            <div class="">
+                <div class="h3"><%= post.title%></div>
+                <div class=""><p><%= post.desc%></p></div>
+            </div>
+            <% if(post.owner._id.toString() === userId.toString()) { %>
+            <div>
+
+                <a href="/edit_page/<%=post._id%>"><button class="btn btn-light">Edit</button></a>
+
+                <form action="/delete/<%=post._id%>">
+                    <button class="btn btn-light">Delete</button>
+                </form>
+
+            </div>
+            <% } %>
+        </div>
+    </div>
+</section>
+
+
+</div>
+</body>
+</html>

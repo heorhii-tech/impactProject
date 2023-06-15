@@ -11,7 +11,7 @@ route.get('/',midle.checkHomeTkn,postcontrl.getStartPage);
 route.get('/loginPage',midle.checkHomeTkn, contrl.getLoginPage)
 route.post('/login', contrl.postLoginPage)
 
-route.get('/mainPage',midle.checkToken,postcontrl.getMainPage)
+
 
 route.get('/signupPage',midle.checkHomeTkn, contrl.getSignPage)
 route.post('/signup',contrl.getSignUpFunction)
@@ -24,6 +24,7 @@ route.get('/delete/:id', postcontrl.deleteQuestion)
 
 route.get('/questionPage',midle.checkToken, contrl.getQuestionPage)
 route.post('/addNewQuestion/:id',midle.checkToken, postcontrl.addNewQuestion)
+route.get('/fullPage/:id',midle.checkHomeTkn,postcontrl.getFullPage)
 
 route.get('/logout', contrl.logOut)
 

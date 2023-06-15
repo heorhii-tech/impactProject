@@ -68,6 +68,14 @@ const addNewQuestion = (req, res) => {
 
 
 }
+
+const getFullPage = (req,res)=>{
+    postModel.findById(req.params.id)
+        .then(result=>res.render('fullPage', {post : result}))
+        .catch (()=>console.log(err))
+
+
+}
 const logOut = (req, res) => {
     res.clearCookie('userToken');
     res.render('startPage', {error: ''})
@@ -79,7 +87,8 @@ module.exports = {
     getMainPage,
     getEditPage,
     postEdited,
-    deleteQuestion
+    deleteQuestion,
+    getFullPage
 
 
 }
