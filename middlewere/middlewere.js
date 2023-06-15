@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 
+
+
 const checkHomeTkn = (req, res, next) => {
     let token = req.cookies.userToken;
     if (!token) {
@@ -39,7 +41,7 @@ const checkToken = (req, res, next) => {
         })
     } else {
         res.locals.user = false;
-        res.render('startPage', {userId: ""}, )
+    res.redirect('/loginPage')
     }
 }
 

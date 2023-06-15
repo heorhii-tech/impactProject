@@ -6,12 +6,12 @@
                 <h4>Logo</h4>
             </div>
             <% if(user){%>
-            <h4>Welcome <%= user%></h4>
+            <h4 class="header_welcome">Welcome <%= user%></h4>
             <%}%>
             <div class="auth">
                 <%if(!userId){%>
 
-                <a class="auth_btn" href="/loginPage">Log In</a>
+                <a class="auth_btn" href="/loginPage">Log In</i></a>
                 <a class="auth_btn" href="/signupPage">Sign Up</a>
                 <%}%>
                 <%if(userId){%>

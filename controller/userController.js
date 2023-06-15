@@ -4,21 +4,21 @@ const jwt = require('jsonwebtoken');
 
 
 const getLoginPage = (req, res) => {
-    res.render('logInPage')
+    res.render('logInPage', {error : " "})
 }
 
 const postLoginPage = async (req, res) => {
 //   //Check if this user is already in the DB.
     let existedUser = await userModel.findOne({email: req.body.email});
     if (!existedUser) {
-        res.render('signupPage', {
+        res.render('loginPage', {
             error: "user is not exist. So signup first please!",
             success: ""
         })
     } else {
         let isCorrectPass = bcrypt.compareSync(req.body.password, existedUser.password);
         if (!isCorrectPass) {
-            res.render('signupPage', {
+            res.render('loginPage', {
                 error: "user password is not correct!",
                 success: ""
             })
