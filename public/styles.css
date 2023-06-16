@@ -330,6 +330,9 @@ flex-direction: column;
 .editPost{
     padding:10px;
     margin:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .logInForm{
@@ -419,7 +422,7 @@ flex-direction: column;
 .question_wrapper input{
      color:black;
     text-align:center;
-    margin-right:40px;
+
     margin-bottom:10px;
     padding:5px;
 }
@@ -542,4 +545,63 @@ flex-direction: column;
     font-size: 18px;
     border-radius: 10px;
 
+}
+.question_wrapper editPost{
+display: flex;
+    flex-direction: column;
+}
+.commentArea{
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.edit_wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+
+    text-align: center;
+    background-color: rgba(160,156,147,0.71);
+    width: 40%;
+    border-radius: 10px 10px;
+    padding: 10px;
+
+}
+.full_edit_btn{
+    padding: 6px;
+}
+.form_edit{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40%;
+    align-self: center;
+
+
+}
+.title_question{
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.desc_question{
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+.edit_title{
+    border-radius: 10px;
+    width: 60%;
+    margin: auto;
+
+
+}
+.edit_desc{
+    border-radius: 10px;
+}
+.edit_btn{
+    width: 40%;
+    margin: auto;
 }

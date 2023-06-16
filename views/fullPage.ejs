@@ -23,20 +23,22 @@
             <% if(post.owner._id.toString() === userId.toString()) { %>
             <div class="postModify">
                 <a href="/edit_page/<%= post._id %>">
-                    <button class="edit_btn">Edit</button>
+                    <button class="full_edit_btn">Edit</button>
                 </a>
                 <form action="/delete/<%= post._id %>">
-                    <button class="edit_btn">Delete</button>
+                    <button class="full_edit_btn">Delete</button>
                 </form>
             </div>
 
             <% } %>
+            <%if(userId){%>
             <form action="/addComment/<%= userId %>/<%= post._id %>" method="post">
                 <input type="hidden" value="<%= post._id %>" name="postId">
                 <textarea name="comment" id="" cols="50" rows="10" placeholder="Comment" class="commentArea"></textarea><br>
                 <button class="question_btn">Add comment</button>
 
             </form>
+            <%}%>
 
             <% for(let i = 0; i < comments.length; i++){ %>
             <% if(comments[i].fromPost._id.toString() === post._id.toString()){ %>
@@ -54,7 +56,7 @@
 
                 <form class="hidden_form" action="/deleteComment/<%= comments[i]._id %>" method="post">
                     <input type="hidden" name="postId" value="<%= post._id %>">
-                    <button class="edit_btn">Delete</button>
+                    <button class="full_edit_btn">Delete</button>
 
                 </form>
 

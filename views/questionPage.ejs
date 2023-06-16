@@ -16,8 +16,8 @@
         <div class="main_wrapper">
             <div class="question_wrapper">
                 <form action="/addNewQuestion/<%= userId %>" method="post">
-                    <input type="text" placeholder="Title" name="title"><br>
-                    <textarea name="desc" id="" cols="50" rows="10" placeholder="Description"></textarea><br>
+                    <input class="title_question" type="text" placeholder="Title" name="title"><br>
+                    <textarea class="desc_question" name="desc" id="" cols="50" rows="10" placeholder="Description"></textarea><br>
                     <button>Add question</button>
                 </form>
                 <p><%=error %></p>

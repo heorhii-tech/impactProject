@@ -50,7 +50,7 @@ const postEdited = (req, res) => {
             result.desc = req.body.desc
             result.save()
                 .then(() =>
-                    res.redirect('/'))
+                    res.redirect(`/edit_page/${req.params.id}`))
                 .catch(err => console.log(err))
         })
 }
