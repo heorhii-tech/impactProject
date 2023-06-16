@@ -30,26 +30,31 @@
 
                         <div class="allPosts">
 
-                            <h3 class="post_title"><%= posts[i].title %></h3>
-                            <p class="post_desc"><%= posts[i].desc.slice(0, 50) %></p>
+                            <div class="title_desc">
+                                <h3 class="post_title"><%= posts[i].title %></h3>
+                                <p class="post_desc"><%= posts[i].desc.slice(0, 50) %></p>
+                            </div>
                             <h4 class="date"><%= posts[i].creat_at %></h4>
 
                             <p class="addedBy">Added by : <%= posts[i].owner.userName %> </p>
 
                             <% if(posts[i].owner._id.toString() === userId.toString()) { %>
-
-
+                                <div class="button_fullPage">
                                     <div class="edit-delete-btn">
 
-                                    <a href="/edit_page/<%= posts[i]._id %>">
-                                        <button class="edit_btn">Edit</button>
-                                    </a>
+                                        <a href="/edit_page/<%= posts[i]._id %>">
+                                            <button class="edit_btn">Edit</button>
+                                        </a>
 
-                                    <form action="/delete/<%= posts[i]._id %>">
-                                        <button class="edit_btn">Delete</button>
-                                    </form>
+                                        <form action="/delete/<%= posts[i]._id %>">
+                                            <button class="edit_btn">Delete</button>
+                                        </form>
 
+                                    </div>
                                 </div>
+
+
+
                             <% } %>
                                     <a class="see_btn" href="/fullPage/<%= posts[i]._id %>">See more </a>
                                </div>

@@ -15,9 +15,9 @@
    <section class="section_content">
     <div class="container">
         <div class="main_wrapper">
-            <div class="addComment">
+            <div class="addedComment">
                 <div class="postTitle"><%= post.title %></div>
-                <div class="psotDesc"><p><%= post.desc %></p></div>
+                <div class="psotDesc"><%= post.desc %></div>
             </div>
 
             <% if(post.owner._id.toString() === userId.toString()) { %>
@@ -35,25 +35,27 @@
                 <input type="hidden" value="<%= post._id %>" name="postId">
                 <textarea name="comment" id="" cols="50" rows="10" placeholder="Comment" class="commentArea"></textarea><br>
                 <button class="question_btn">Add comment</button>
-                <a href="/" class="edit_btn">Go Back</a>
+
             </form>
 
             <% for(let i = 0; i < comments.length; i++){ %>
             <% if(comments[i].fromPost._id.toString() === post._id.toString()){ %>
 
             <div class="comment">
-                <p><%= comments[i].comment %></p>
-                <p>Added by: <%= comments[i].owner.userName %></p>
+               <div class="comment_title">
+                   <p ><%= comments[i].comment %></p>
+               </div>
+                <p class="comment_added">Added by: <%= comments[i].owner.userName %></p>
             </div>
 
             <% if(comments[i].owner._id.toString() === userId.toString()) { %>
             <div>
 
 
-                <form action="/deleteComment/<%= comments[i]._id %>" method="post">
+                <form class="hidden_form" action="/deleteComment/<%= comments[i]._id %>" method="post">
                     <input type="hidden" name="postId" value="<%= post._id %>">
                     <button class="edit_btn">Delete</button>
-                    <a href="/" class="edit_btn">Go Back</a>
+
                 </form>
 
 

@@ -105,15 +105,26 @@ body {
     margin-bottom: 10px;
     border: 1px solid black ;
     border-radius: 5px;
+    background-color: #022A8F;
+    padding: 5px;
 }
 .post_desc{
     font-size: 18px;
+    padding: 5px;
+
 
     margin-bottom: 5px;
     border-bottom: 1px solid black;
 
 
 }
+.button_fullPage{
+    justify-content: center;
+}
+.title_desc{
+    width: 100%;
+}
+
 .date{
     max-width: 200px;
     font-size: 14px;
@@ -137,6 +148,14 @@ flex-direction: column;
     align-items: center;
 
 }
+.main_wrapper{
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
 .section3{
     color:white;
     background-color:white;
@@ -148,9 +167,10 @@ flex-direction: column;
     flex-direction: column;
     flex-wrap: wrap;
     width: 25%;
+    max-width: 25%;
     border-radius: 10px;
     border: 2px solid #360311;
-    padding: 10px 5px 5px 5px;
+    padding: 0 0px 5px 0px;
     background-color: rgba(160,156,147,0.71);
     gap: 15px;
     justify-content: space-between;
@@ -442,40 +462,72 @@ flex-direction: column;
     transition: 0.9s ease;
     padding: 2px;
 }
-.addComment{
-    margin-top:200px;
+.addedComment{
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    background-color: rgba(160,156,147,0.71);
+    width: 40%;
+    border-radius: 10px 10px;
+    padding: 10px;
+
+
 }
+.commentArea{
+    width: 300px;
+    height: 56px;
+    border-radius: 10px;
+
+}
+
 .addComment div{
 
     margin-right:10px;
 }
 .postTitle{
-    margin-left:420px;
+
     margin-bottom:20px;
     background:white;
     border:2px solid black;
     color:black;
-    width:200px;
+    padding: 4px;
+    border-radius: 10px;
+
+    align-self: center;
+    font-size: 22px;
+
 }
 .comment{
-    margin-left:340px;
+    color: white;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 40%;
+    border: 1px solid ;
     border-radius: 10px;
-    border: 2px solid #360311;
-    padding: 5px;
-    background-color: rgba(160,156,147,0.71);
-    gap: 10px;
-    color: black;
+   padding: 10px;
+    flex-direction: column;
+    gap :5px;
+
+
+}
+.comment_title{
+    margin-bottom: 10px;
+    border-bottom: 1px solid ;
+}
+
+.hidden_form{
+    margin-top: -30px;
+
+}
+.comment_added{
+    font-size: 12px;
 }
 .commentArea{
     color:black;
 }
 .postModify{
-    margin-left:400px;
-    margin-top:10px;
+
+    margin-top:-35px;
     margin-bottom:10px;
     width:200px;
     display:flex;
@@ -484,4 +536,10 @@ flex-direction: column;
 .addedBy{
     color:black;
     align-self: center;
+}
+.psotDesc{
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+
 }
