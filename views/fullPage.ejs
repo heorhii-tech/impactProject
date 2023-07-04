@@ -41,9 +41,10 @@
             <%}%>
 
             <% for(let i = 0; i < comments.length; i++){ %>
-            <% if(comments[i].fromPost._id.toString() === post._id.toString()){ %>
+                <% if(comments[i].fromPost && comments[i].fromPost._id.toString() === post._id.toString()){ %>
 
-            <div class="comment">
+
+                <div class="comment">
                <div class="comment_title">
                    <p ><%= comments[i].comment %></p>
                </div>
